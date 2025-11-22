@@ -22,7 +22,7 @@ void JAM2_TreeMarker_FIXTARGET(){
 	//beta vector of target at the center of mass frame
 	TVector3 Beta_Target(0,0,B_Target);
 	//For the purpose of test and check:
-	TLorentzVector v_test(0,0,TMath::Sqrt(sqrt_sNN*sqrt_sNN/4-0.938*0.938),sqrt_sNN/2);
+	TLorentzVector v_test(0,0,-TMath::Sqrt(sqrt_sNN*sqrt_sNN/4-0.938*0.938),sqrt_sNN/2);
 	
 	std::cout<<"Check:"<<std::endl;
 	std::cout<<"Before Boost:"<<"Px="<<v_test.Px()<<" ;Py="<<v_test.Py()<<" ;Pz="<<v_test.Pz()<<" ;E="<<v_test.E()<<std::endl;;
