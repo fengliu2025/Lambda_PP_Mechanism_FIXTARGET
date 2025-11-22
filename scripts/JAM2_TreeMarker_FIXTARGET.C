@@ -24,7 +24,7 @@ void JAM2_TreeMarker_FIXTARHET(){
 	//For the purpose of test and check:
 	TLorentzVector v_test(0,0,TMath::Sqrt(sqrt_sNN*sqrt_sNN/4-0.938*0.938),sqrt_sNN/2);
 	
-	std::count<<"Check:"<<std::endl;
+	std::cout<<"Check:"<<std::endl;
 	std::cout<<"Before Boost:"<<"Px="<<v_test.Px()<<" ;Py="<<v_test.Py()<<" ;Pz="<<v_test.Pz()<<" ;E="<<v_test.E()<<std::endl;;
 	v_test.Boost(-Beta_Target);
 	std::cout<<"After Boost:"<<"Px="<<v_test.Px()<<" ;Py="<<v_test.Py()<<" ;Pz="<<v_test.Pz()<<" ;E="<<v_test.E()<<std::endl;
