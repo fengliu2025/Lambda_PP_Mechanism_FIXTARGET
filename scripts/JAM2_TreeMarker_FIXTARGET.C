@@ -1,6 +1,6 @@
 
 
-void JAM2_TreeMarker_FIXTARHET(){
+void JAM2_TreeMarker_FIXTARGET(){
 	std::vector<std::string> Infiles;
 	// define input file array 
 	for(int i =0 ; i < 1000;i++){
