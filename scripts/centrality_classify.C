@@ -1,6 +1,6 @@
 void centrality_classify(){
 
-	TFile *fin=TFile::Open("/Users/feng/Documents/physics_project/Lambda_AuAu/genEvent/JAM1/forFeng2_SMode_root/JAM1_SMode_7p7_charged_multiplicity.root");
+	TFile *fin=TFile::Open("charged_multiplicity.root");
 	//TFile *fin=TFile::Open("/Users/feng/Documents/physics_project/Lambda_AuAu/genEvent/JAM1/forFeng_root/charged_multiplicity.root");
 	TH2D *h2D_chagred_multiplicity_impact_parameter = (TH2D *)fin->Get("h2D_chagred_multiplicity_impact_parameter");
 	TH1D *h1D_charged_multiplicity = (TH1D *)h2D_chagred_multiplicity_impact_parameter->ProjectionX();

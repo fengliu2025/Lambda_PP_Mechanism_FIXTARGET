@@ -11,8 +11,8 @@
 using namespace Pythia8;
 
 void Centrality_Analyzer::Loop(){
-      Centrality_Eta_low  = -2.0;
-      Centrality_Eta_high = 0.0;
+      double Centrality_Eta_low  = -2.0;
+      double Centrality_Eta_high = 0.0;
       charged_multiplicity_Upper = 1000;
       //create PYTHIA8 object
       Pythia pythia;
