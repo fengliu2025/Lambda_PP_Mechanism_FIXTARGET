@@ -18,13 +18,13 @@ all: $(TARGET)
 
 
 $(TARGET): main_Centrality.o
-        $(CXX) -o $(TARGET) main_Centrality.o $(LIBS)
+	$(CXX) -o $(TARGET) main_Centrality.o $(LIBS)
 
 main_JAM1Analyzer.o: main_Centrality.C
-        $(CXX) $(CXXFLAGS) -c main_Centrality.C -o main_Centrality.o
+	$(CXX) $(CXXFLAGS) -c main_Centrality.C -o main_Centrality.o
 
 clean:
-        rm -f $(TARGET) *.o
+	rm -f $(TARGET) *.o
 
 .PHONY: all clean
 

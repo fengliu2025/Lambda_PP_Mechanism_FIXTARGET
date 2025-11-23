@@ -4,25 +4,25 @@ void JAM2_TreeMarker_FIXTARGET(){
 	std::vector<std::string> Infiles;
 	// define input file array 
 	for(int i =0 ; i < 1000;i++){
-	  Infiles.push_back(Form("/gpfs01/star/scratch/fengliu/sqrt_sNN_3p0_batch1/JAM2_sqrt_SNN_3p0_%d.dat",i));
+	  Infiles.push_back(Form("/gpfs01/star/scratch/fengliu/sqrt_sNN_3p0_batch3/JAM2_sqrt_SNN_3p0_%d.dat",i));
 	}
 	//end define input file array
 
 	int N_DAT = 100; // Convert N_DAT .dat file into one rootfile 
 	int i_temp_dat = 0 ;
-	int i_temp_root = 0; 
+	int i_temp_root = 20; 
 	TTree *tree = new TTree("genEvent","genEvent");
 	double impact_parameter = 0;
 
 	//
 	double sqrt_sNN = 3.0; //GeV 
 	//****Define the rapidity of targer particle at the center of mass frame
-	double Rapidity_Target = -1.05;
+	double Rapidity_Target = 1.05;
 	double B_Target = TMath::TanH(Rapidity_Target);
 	//beta vector of target at the center of mass frame
 	TVector3 Beta_Target(0,0,B_Target);
 	//For the purpose of test and check:
-	TLorentzVector v_test(0,0,-TMath::Sqrt(sqrt_sNN*sqrt_sNN/4-0.938*0.938),sqrt_sNN/2);
+	TLorentzVector v_test(0,0,TMath::Sqrt(sqrt_sNN*sqrt_sNN/4-0.938*0.938),sqrt_sNN/2);
 	
 	std::cout<<"Check:"<<std::endl;
 	std::cout<<"Before Boost:"<<"Px="<<v_test.Px()<<" ;Py="<<v_test.Py()<<" ;Pz="<<v_test.Pz()<<" ;E="<<v_test.E()<<std::endl;;
@@ -178,7 +178,7 @@ void JAM2_TreeMarker_FIXTARGET(){
 	//*********************************END INPUT FILE LOOP************************************
 
 	
-	TFile *fout_stat = new TFile("/gpfs01/star/scratch/fengliu/JAM2/sqrt_sNN_3p0_root/stat.root","RECREATE");
+	TFile *fout_stat = new TFile("/gpfs01/star/scratch/fengliu/JAM2/sqrt_sNN_3p0_root/stat_bacth3.root","RECREATE");
 	h1_number_events_distribution->Write();
 	fout_stat->Close();
 	delete fout_stat;
