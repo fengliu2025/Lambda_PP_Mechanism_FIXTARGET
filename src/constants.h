@@ -49,8 +49,8 @@ const int centrality_Nclass = 7;
 //int centrality_sqrt_sNN_7_7_charged_multi_higher[centrality_Nclass] = {1000000 ,212 ,178 ,130 , 95 , 67 ,46 };
 //int centrality_sqrt_sNN_7_7_charged_multi_lower[centrality_Nclass] =  {212     ,178 ,130 ,95  , 67 , 46 ,30 };
 
-int centrality_sqrt_sNN_3_0_charged_multi_higher[centrality_Nclass] = {1000000   ,172.5 ,150.5 ,117.5,93.5, 75.5 ,61.5};
-int centrality_sqrt_sNN_3_0_charged_multi_lower[centrality_Nclass] =  {172.5     ,150.5 ,117.5 , 93.5,75.5, 61.5 ,52.5 };
+int centrality_sqrt_sNN_3_0_charged_multi_higher[centrality_Nclass] = {1000000  ,172 ,150 ,117,93, 75 ,61};
+int centrality_sqrt_sNN_3_0_charged_multi_lower[centrality_Nclass] =  {172      ,150 ,117 , 93,75, 61 ,52 };
 
 
 int centrality_sqrt_sNN_3_0_centra_lower[centrality_Nclass]  = {0, 5 , 10, 20, 30, 40, 50 };
