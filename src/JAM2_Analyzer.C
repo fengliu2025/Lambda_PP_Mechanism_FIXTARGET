@@ -292,7 +292,7 @@ void JAM2_Analyzer::Loop(){
          //*********************************ENTER EVENT LOOP**********************************
          for(int iEvent=0;iEvent<N_events;iEvent++){
             
-            if (iEvent%1000 == 0 ) std::cout<<"iEvent = " << iEvent <<std::endl;
+            if (iEvent%10000 == 0 ) std::cout<<"iEvent = " << iEvent <<std::endl;
             fChain->GetEntry(iEvent);
             //Number of particles 
             int N_particle = px->size();
