@@ -389,7 +389,7 @@ void JAM2_Analyzer::Loop(){
             Qx_C = Qx_C ; 
             Qy_C = Qy_C ; 
 
-            if(std::isnan())
+            
 
             double Phi_1_A_v1 = TMath::ATan(Qy_A_v1/Qx_A_v1); 
             if( Qy_A_v1 >=0 && Qx_A_v1 < 0 ) { Phi_1_A_v1 = Phi_1_A_v1 +   TMath::Pi();}
