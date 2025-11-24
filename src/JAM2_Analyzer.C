@@ -389,6 +389,8 @@ void JAM2_Analyzer::Loop(){
             Qx_C = Qx_C ; 
             Qy_C = Qy_C ; 
 
+            if(std::isnan())
+
             double Phi_1_A_v1 = TMath::ATan(Qy_A_v1/Qx_A_v1); 
             if( Qy_A_v1 >=0 && Qx_A_v1 < 0 ) { Phi_1_A_v1 = Phi_1_A_v1 +   TMath::Pi();}
             if( Qy_A_v1 <=0 && Qx_A_v1 > 0 ) { Phi_1_A_v1 = Phi_1_A_v1 + 2*TMath::Pi();}
@@ -408,6 +410,9 @@ void JAM2_Analyzer::Loop(){
 
             //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
+            
+
+            
 
 
 
@@ -489,6 +494,11 @@ void JAM2_Analyzer::Loop(){
                if( !(mid_eta_Charged_Multiplicity > centrality_charged_multi_higher[5] && mid_eta_Charged_Multiplicity < centrality_charged_multi_higher[2])  ){
                   break;// not fill histgrom.
                }
+               if(std::isnan(Phi_1_A_v1)){
+                    std::cout<<"Phi_1_A_v1 is nan!"<<std::endl;
+                    Phi_1_A_v1 = 0;
+               }
+
 
                double temp_particle_charge = pdata.charge((*pid)[i_particle]);
                TLorentzVector temp_particle( (*px)[i_particle],(*py)[i_particle],(*pz)[i_particle],(*E)[i_particle] );
@@ -650,6 +660,13 @@ void JAM2_Analyzer::Loop(){
                //============================================================Start Global Porlarization====================================================================
                if( Rapidity_lambda  < lambda_GlobalPol_y_highCut && Rapidity_lambda  > lambda_GlobalPol_y_lowCut && Lambda_4momentum[i_lambda].Pt() > lambda_GlobalPol_pT_lowCut && (mid_eta_Charged_Multiplicity > centrality_charged_multi_higher[6] && mid_eta_Charged_Multiplicity < centrality_charged_multi_higher[3]) ){
                   
+
+
+                  if(std::isnan(Phi_1_A_GP)){
+                        std::cout<<"Phi_1_A_GP is nan!"<<std::endl;
+                        Phi_1_A_GP = 0;
+
+                  }
                   //For the purpose of double check
 
                   
