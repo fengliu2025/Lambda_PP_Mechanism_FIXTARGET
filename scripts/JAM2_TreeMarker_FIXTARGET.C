@@ -4,13 +4,13 @@ void JAM2_TreeMarker_FIXTARGET(){
 	std::vector<std::string> Infiles;
 	// define input file array 
 	for(int i =0 ; i < 1000;i++){
-	  Infiles.push_back(Form("/gpfs01/star/scratch/fengliu/sqrt_sNN_3p0_batch3/JAM2_sqrt_SNN_3p0_%d.dat",i));
+	  Infiles.push_back(Form("/gpfs01/star/scratch/fengliu/sqrt_sNN_3p0_batch5/JAM2_sqrt_SNN_3p0_%d.dat",i));
 	}
 	//end define input file array
 
 	int N_DAT = 100; // Convert N_DAT .dat file into one rootfile 
 	int i_temp_dat = 0 ;
-	int i_temp_root = 20; 
+	int i_temp_root = 40; 
 	TTree *tree = new TTree("genEvent","genEvent");
 	double impact_parameter = 0;
 
@@ -178,7 +178,7 @@ void JAM2_TreeMarker_FIXTARGET(){
 	//*********************************END INPUT FILE LOOP************************************
 
 	
-	TFile *fout_stat = new TFile("/gpfs01/star/scratch/fengliu/JAM2/sqrt_sNN_3p0_root/stat_bacth3.root","RECREATE");
+	TFile *fout_stat = new TFile("/gpfs01/star/scratch/fengliu/JAM2/sqrt_sNN_3p0_root/stat_bacth5.root","RECREATE");
 	h1_number_events_distribution->Write();
 	fout_stat->Close();
 	delete fout_stat;
