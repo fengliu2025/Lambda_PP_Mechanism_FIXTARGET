@@ -363,7 +363,7 @@ void JAM2_Analyzer::Loop(){
 
 
                //''''''''''''''''''''''''''''''Identify Lambda Particle '''''''''''''''''''''''
-               if ( (*pid)[i_particle] == 3122 && temp_particle_rapidity > -1.0 && temp_particle_rapidity < -1.0  ){ // no any cuts here 
+               if ( (*pid)[i_particle] == 3122 && temp_particle_rapidity > -1.0 && temp_particle_rapidity < 1.0  ){ // no any cuts here 
                   Lambda_4momentum.push_back( temp_particle  );
                   Lambda_Index.push_back(i_particle);
                   h1D_lambda_pT_distribution->Fill(       temp_particle.Pt()          );
@@ -384,10 +384,10 @@ void JAM2_Analyzer::Loop(){
             Qx_A_GP = -Qx_A_GP ;
             Qy_A_GP = -Qy_A_GP ; 
 
-            Qx_B = -Qx_B ; 
-            Qy_B = -Qy_B ; 
-            Qx_C = -Qx_C ; 
-            Qy_C = -Qy_C ; 
+            Qx_B = Qx_B ; 
+            Qy_B = Qy_B ; 
+            Qx_C = Qx_C ; 
+            Qy_C = Qy_C ; 
 
             double Phi_1_A_v1 = TMath::ATan(Qy_A_v1/Qx_A_v1); 
             if( Qy_A_v1 >=0 && Qx_A_v1 < 0 ) { Phi_1_A_v1 = Phi_1_A_v1 +   TMath::Pi();}
@@ -663,7 +663,7 @@ void JAM2_Analyzer::Loop(){
 
                   h1D_dN_dcos_thets_star_unweight ->Fill( pseudo_proton_Pdirection.Dot(Polarization_direction)/( pseudo_proton_Pdirection.Mag()*Polarization_direction.Mag() )  );
                   h1D_dN_dcos_thets_star_weight   ->Fill( pseudo_proton_Pdirection.Dot(Polarization_direction)/( pseudo_proton_Pdirection.Mag()*Polarization_direction.Mag() ),probability );
-                  h1D_dN_dcos_thets_star_sample   ->Fill( proton.Vect().Dot(Polarization_direction) / ( proton.Mag()*Polarization_direction.Mag()  )   );
+                  h1D_dN_dcos_thets_star_sample   ->Fill( proton.Vect().Dot(Polarization_direction) / ( proton.Vect().Mag()*Polarization_direction.Mag()  )   );
 
 
                   // Calculate global polarization
