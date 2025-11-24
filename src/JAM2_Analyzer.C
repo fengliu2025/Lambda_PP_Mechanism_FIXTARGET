@@ -318,6 +318,7 @@ void JAM2_Analyzer::Loop(){
             for(int i_particle=0 ; i_particle < N_particle;i_particle++){
                TLorentzVector temp_particle( (*px)[i_particle],(*py)[i_particle],(*pz)[i_particle],(*E)[i_particle] );
                double temp_particle_eta = temp_particle.Eta();
+               double temp_particle_rapidity = temp_particle.Rapidity()+BEAM_RAPIDITY;
                double temp_particle_charge = pdata.charge((*pid)[i_particle]);
                //'''''''''''''''''''''''''''''Fill Basic Distribution of Charged particle''''''''''''''''''''''''
                if(temp_particle_charge && temp_particle_eta > TPC_eta_lower && temp_particle_eta < TPC_eta_higher){
@@ -362,7 +363,7 @@ void JAM2_Analyzer::Loop(){
 
 
                //''''''''''''''''''''''''''''''Identify Lambda Particle '''''''''''''''''''''''
-               if ( (*pid)[i_particle] == 3122 && temp_particle_eta > TPC_eta_lower && temp_particle_eta < TPC_eta_higher  ){ // no any cuts here 
+               if ( (*pid)[i_particle] == 3122 && temp_particle_rapidity > -1.0 && temp_particle_rapidity < -1.0  ){ // no any cuts here 
                   Lambda_4momentum.push_back( temp_particle  );
                   Lambda_Index.push_back(i_particle);
                   h1D_lambda_pT_distribution->Fill(       temp_particle.Pt()          );
