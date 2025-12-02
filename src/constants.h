@@ -65,7 +65,7 @@ int centrality_sqrt_sNN_3_0_centra_higher[centrality_Nclass] = {5, 10, 20, 30, 4
 const double PI = 3.14159265359;
 
 
-const int bin_phi_lambda_phi_p = 12;
+const int bin_phi_lambda_phi_p = 21;
 
 
 
