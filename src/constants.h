@@ -37,7 +37,7 @@ const double charged_pion_v1_pt_highCut   = 1.6;
 const double lambda_v1_pt_lowCut        = 0.4;
 const double lambda_v1_pt_highCut       = 2.0;
 
-const double lambda_GlobalPol_y_lowCut      =-1.0 ; 
+const double lambda_GlobalPol_y_lowCut      =-0.2 ; 
 const double lambda_GlobalPol_y_highCut     = 1.0 ; 
 
 const double lambda_GlobalPol_pT_lowCut  = 0.7; 
